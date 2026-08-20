@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: va-transaction-receiver
+  mongodb:
+    # MongoDB Atlas connection (database name added at the end of the URI: vaTransactionsDb)
+    # NOTE: Spring Boot 4.x renamed this prefix from spring.data.mongodb.* to spring.mongodb.*
+    uri: "mongodb+srv://arunalulinearsix_db_user:GeZi5rCbfFIloDtd@cluster0.rou8ink.mongodb.net/vaTransactionsDb"
+
+server:
+  port: 8080
+
+# shared-secret auth used by PostVATransactionController - change these for real use
+finacle:
+  outbound:
+    expected-username: finacle
+    expected-api-key: changeme
+
+# allow the React dev server to call this API directly
+app:
+  cors:
+    allowed-origins: "*"
